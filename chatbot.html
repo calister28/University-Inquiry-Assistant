@@ -1,0 +1,99 @@
+<!-- answers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answers Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        #questionInput {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: border-color 0.3s;
+        }
+
+        #questionInput:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        #getAnswerBtn {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #getAnswerBtn:hover {
+            background-color: #2185d0;
+        }
+
+        #answerResult {
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ask a Question</h1>
+    <input type="text" id="questionInput" placeholder="Type your question...">
+    <button type="button" id="getAnswerBtn" onclick="getAnswer()">Get Answer</button>
+    <p id="answerResult"></p>
+</div>
+
+<script>
+    function getAnswer() {
+        var questionInput = document.getElementById('questionInput');
+        var answerResult = document.getElementById('answerResult');
+        var question = questionInput.value.toLowerCase();
+
+        // Replace this with your actual logic to provide answers
+        if (question.includes('university') || question.includes('college')) {
+            answerResult.innerText = 'Our university is dedicated to providing quality education and a vibrant campus experience.';
+        } else if (question.includes('courses') || question.includes('programs')) {
+            answerResult.innerText = 'We offer a variety of programs in science, technology, arts, and more. You can find detailed information on our website.';
+        } else {
+            answerResult.innerText = 'I\'m sorry, I don\'t have an answer for that question.';
+        }
+
+        // Clear the input field
+        questionInput.value = '';
+    }
+</script>
+
+</body>
+</html>
